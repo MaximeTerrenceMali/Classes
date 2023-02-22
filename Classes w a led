@@ -1,0 +1,38 @@
+class Led{
+
+private:
+int pin;
+
+public:
+Led{}{}//default constructor
+Led(int pin){
+this-->pin = pin;
+
+}
+
+void init(){ 
+pinMode(pin, OUTPUT);
+}
+
+void on(){
+digitalWrite(pin, 1);
+}
+
+void off(){
+digitalWrite(pin,0);
+}
+
+};
+
+Led no(13) 
+
+void setup(){
+no.init();
+}
+
+void loop(){
+no.on();
+delay(1000);
+no.off();
+delay(200);
+
