@@ -1,21 +1,40 @@
-#include "Led.h" //quotations mean it will take the library from the project file, as for <> is for arduino library files
+#include <Arduino.h>
 
+class LED{
 
-Led::Led(int pin){
+private:
+int pin;
 
-_pin = pin;
+public:
+LED(){}//default constructor
+LED(int pin){
+this->pin = pin;
+
 }
 
-void Led::init(){
+void init(){ 
 pinMode(pin, OUTPUT);
-
 }
 
-void Led::on(){
-
-digitalWrite(_pin,1);
+void on(){
+digitalWrite(pin, 1);
 }
-void Led::off(){
 
-digitalWrite(_pin, 0);
+void off(){
+digitalWrite(pin,0);
+}
+
+};
+
+LED no = LED(13); 
+
+void setup(){
+no.init();
+}
+
+void loop(){
+no.on();
+delay(1000);
+no.off();
+delay(200);
 }
