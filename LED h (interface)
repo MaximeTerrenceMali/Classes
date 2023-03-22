@@ -6,12 +6,16 @@
 class LED{
 
 private:
-int_pin;
+int pin;
 
 public:
-Led(){}       // default construtor
-Led(int pin); //the constructor
+LED(){}       // default construtor
+LED(int pin); //the constructor
 
 void init();  //to initialize the pin as output
 void on();    //to turn the LED on
 void off();   //to turn the LED off
+
+};
+
+#endif
